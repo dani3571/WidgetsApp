@@ -20,7 +20,6 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Mostar un texto con el nombre de la primera opction del menu
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
       itemCount: appMenuItems.length,
@@ -46,7 +45,8 @@ class _CustomListTitle extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
     return ListTile(
          leading: Icon(menuItem.icon, color: colors.primary), //Para poner el icono
-         trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary,),
+         // Icono pegado a la parte derecha
+         trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary), 
          title: Text(menuItem.title),
          subtitle: Text(menuItem.subTitle),
          // * El onTap para que redireccione a otras pantallas
