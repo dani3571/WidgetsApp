@@ -3,6 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 class HomeScreen extends StatelessWidget {
+    // ! Utilizamos static para no crear instancias de la clase _HomeView
+  static const String name = 'home_screen';
+
   const HomeScreen({super.key});
 
   @override
@@ -18,6 +21,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class _HomeView extends StatelessWidget {
+
   const _HomeView();
 
   @override
@@ -69,8 +73,9 @@ class _CustomListTitle extends StatelessWidget {
        //   Navigator.pushNamed(context, menuItem.link);
          
          // ! 3 - esta es otra forma de crear rutas que es la mas recomendada
-          context.push(menuItem.link);
-        
+           context.push(menuItem.link);
+        // * En caso de que no queramos usar la forma anterior: 
+           // context.pushNamed(CardsScreen.name);
          },
      );
   }
