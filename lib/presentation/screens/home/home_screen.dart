@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -27,6 +28,7 @@ class _HomeView extends StatelessWidget {
       itemBuilder: (context, index){
           final menuItem = appMenuItems[index];
            return _CustomListTitle(menuItem: menuItem);
+           
       }
 
     );
@@ -49,9 +51,25 @@ class _CustomListTitle extends StatelessWidget {
          trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary), 
          title: Text(menuItem.title),
          subtitle: Text(menuItem.subTitle),
-         // * El onTap para que redireccione a otras pantallas
+         // * El onTap permite redireccionara a otras pantallas
          onTap: () {
-           // TODO: navegar a otras pantallas
+          // push -> pequeñas tarjetas que se mostraran de uno en uno
+          // replace -> quitara la ruta anterior y no se podra regresar
+          /* 
+          ! 1 - esta es una forma de crear rutas
+            Navigator.of(context).push(
+              MaterialPageRoute(  
+                builder: (context) => const CardsScreen()
+                )
+            );
+           */
+         
+         // ! 2 - Esta es la segunda forma donde convocamos a la ruta creada en el main
+          Navigator.pushNamed(context, menuItem.link);
+         
+         // ! 3 - esta es otra forma de crear rutas que es la mas recomendada
+
+        
          },
      );
   }
