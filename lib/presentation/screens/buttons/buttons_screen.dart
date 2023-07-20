@@ -90,7 +90,7 @@ class _ButtonsView extends StatelessWidget {
            ),
 
            // TODO: Custom button 
-           
+           const  CustomButton(),
             // * iconButton
            IconButton(
             onPressed: () {}, 
@@ -111,6 +111,32 @@ class _ButtonsView extends StatelessWidget {
           ],
     
           ), 
+      ),
+    );
+  }
+}
+
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    // * Usamos ClipRect para usar el borderRadius
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell( // * InkWell reaccionara como un pequeño efecto cuando se haga clic a un boton
+          onTap: () {},
+          child: const Padding(
+            // * Padding para añadir separacion
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text('Hola mundo', style: TextStyle(color: Colors.white)),
+            
+          ),
+        ),
       ),
     );
   }
