@@ -13,6 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // * Para usar el go_router usamos el .router en MaterialApp
     return MaterialApp.router(
+      title: 'Flutter Widgets', //*Titulo de la aplicacion que se muestra en los dialogos
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor:3).getTheme(),
       // ! 2 - routes es una forma de crear rutas hacia otras pantallas
