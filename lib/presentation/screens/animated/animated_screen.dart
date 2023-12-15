@@ -20,8 +20,8 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   void changeShape(){
     final random = Random();
 
-    width = random.nextInt(300)+ 120; // * El valor inicial sera 50
-    height= random.nextInt(300)+ 120; // * El valor inicial - minimo sera 50
+    width = random.nextInt(300) + 120; // * El valor inicial sera 50
+    height= random.nextInt(300) + 120; // * El valor inicial - minimo sera 50
     borderRadius = random.nextInt(100) + 20.0;
     
     color = Color.fromARGB(
